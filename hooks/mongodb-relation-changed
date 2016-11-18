@@ -1,0 +1,34 @@
+#!/bin/bash
+# This must be renamed to the name of the relation. The goal here is to
+# affect any change needed by relationships being formed, modified, or broken
+# This script should be idempotent.
+juju-log $JUJU_REMOTE_UNIT modified its settings
+
+# Set Variables
+app_port=`config-get port`
+app_url=`config-get url`
+mongo_db=`config-get dbname`
+
+mongo_host=`relation-get private-address`
+if [ -z "$mongo_host" ]; then
+        mongo_host=localhost
+        juju-log "Unable to get private-address"
+fi
+
+relation_port=`relation-get port`
+mongo_port=${relation_port:-27017}
+
+mongo_url="mongodb://${mongo_host}:${mongo_port}/${mongo_db}"
+
+# Creating Config file
+cat > /opt/rocket.chat/rocketchat.config <<EOS
+export PORT=${app_port}
+export ROOT_URL=${app_url}
+export MONGO_URL=${mongo_url}
+EOS
+
+service rocketchat status
+rc=$?
+
+juju-log "Restarting"
+service rocketchat restart

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e # exit if any command has an error
+
+
+juju-log "Updating configuration file"
+
+# Get previously set variables
+. /opt/rocket.chat/rocketchat.config
+
+# Set Variables
+app_port=`config-get port`
+app_url=`config-get url`
+mongo_url=${MONGO_URL}
+
+# Creating Config file
+cat > /opt/rocket.chat/rocketchat.config <<EOS
+export PORT=${app_port}
+export ROOT_URL=${app_url}
+export MONGO_URL=${mongo_url}
+EOS
+
+juju-log "Restarting"
+service rocketchat restart

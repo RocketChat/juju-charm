@@ -1,0 +1,83 @@
+{
+  "layers": [
+    "rocketchat", 
+    "build"
+  ], 
+  "signatures": {
+    ".build.manifest": [
+      "build", 
+      "dynamic", 
+      "unchecked"
+    ], 
+    "README.ex": [
+      "rocketchat", 
+      "static", 
+      "3f5a5001ed674bf483c44f1753c0cd35e6fdc52b1f939a3c4e58712c1da4c822"
+    ], 
+    "README.md": [
+      "rocketchat", 
+      "static", 
+      "e0b84f0d832fbb6ad082a64eec3d33f712cb20804ad683c64d093c614f8702af"
+    ], 
+    "config.yaml": [
+      "rocketchat", 
+      "dynamic", 
+      "d2c99180a417aedddf57c1004b64908b2faef215618f089b20d430f0847c98aa"
+    ], 
+    "contrib/service/rocketchat.service": [
+      "rocketchat", 
+      "static", 
+      "282f07e3c0b1d6e2b1d4b1d136d913c5a9adba58417689b595ebcbc0e15ec971"
+    ], 
+    "hooks/config-changed": [
+      "rocketchat", 
+      "static", 
+      "3ae9018f10978b052c81c5e9b179254097e8d4b3e744c770b33076af550fa683"
+    ], 
+    "hooks/install": [
+      "rocketchat", 
+      "static", 
+      "72b0f8b4e24258207cd9c7ea4e565529ac0cef41dd52176a7521e6e95a81f121"
+    ], 
+    "hooks/mongodb-relation-changed": [
+      "rocketchat", 
+      "static", 
+      "5c0f246a13996fd2d2a6ec192abe6bc63a97ba5245ba41fd1860abaf824f3ce4"
+    ], 
+    "hooks/mongodb-relation-departed": [
+      "rocketchat", 
+      "static", 
+      "ce69dd93168ee22a81800cc8e34d844a4f40a73d86982496d4bf1a025f328260"
+    ], 
+    "hooks/start": [
+      "rocketchat", 
+      "static", 
+      "9ebb98057efca88c217261413f374ee09538365e659515e45f7600ca8fbeed40"
+    ], 
+    "hooks/stop": [
+      "rocketchat", 
+      "static", 
+      "b4d432c60e8a229d78b59247fc41c196cfe6dfa2b0e73b1bb144e6dd03eebc2d"
+    ], 
+    "hooks/upgrade-charm": [
+      "rocketchat", 
+      "static", 
+      "af7bf9be154eadb45534f1f0f9dc5f680989c7f31060e498e43b866f02d0792c"
+    ], 
+    "icon.svg": [
+      "rocketchat", 
+      "static", 
+      "085f367baa9c4ec724561b6e0d5d167c14c4295d6311b719a57729a17ac025c7"
+    ], 
+    "metadata.yaml": [
+      "rocketchat", 
+      "dynamic", 
+      "77827b125c9264ad39f66a3c4e916c0c07b47fc63ad65568080144f1bf60beb1"
+    ], 
+    "revision": [
+      "rocketchat", 
+      "static", 
+      "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    ]
+  }
+}

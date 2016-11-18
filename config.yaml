@@ -1,0 +1,13 @@
+"options":
+  "url":
+    "type": "string"
+    "default": "http://localhost"
+    "description": "Url Rocket.Chat will be accessible at, example: https://chat.yourdomain.com"
+  "dbname":
+    "type": "string"
+    "default": "rocketchat"
+    "description": "Name of the database you want used"
+  "port":
+    "type": "int"
+    "default": !!int "80"
+    "description": "Port you want Rocket.Chat to listen on"

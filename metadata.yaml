@@ -1,0 +1,13 @@
+"name": "rocketchat"
+"summary": "Rocket.Chat server"
+"maintainer": "Aaron Ogle<aaron.ogle@rocket.chat>"
+"description": "Some words here \n"
+"tags":
+- "social"
+"requires":
+  "mongodb":
+    "interface": "mongodb"
+"provides":
+  "rocketchat":
+    "interface": "http"
+"subordinate": !!bool "false"
