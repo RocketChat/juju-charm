@@ -20,5 +20,10 @@ export ROOT_URL=${app_url}
 export MONGO_URL=${mongo_url}
 EOS
 
-juju-log "Restarting"
-service rocketchat restart
+service rocketchat status
+rc=$?
+
+if [ $rc != 0 ]; then
+  juju-log "Restarting"
+  service rocketchat restart
+fi

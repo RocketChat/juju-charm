@@ -30,5 +30,7 @@ EOS
 service rocketchat status
 rc=$?
 
-juju-log "Restarting"
-service rocketchat restart
+if [ $rc != 0 ]; then
+  juju-log "Restarting"
+  service rocketchat restart
+fi
