@@ -6,9 +6,19 @@ RocketChat charm
 
 You'll need a working juju installation.
 
-To deploy the charm you need:
+You'll need a MongoDB juju charm.
+
+The existing juju charm available in the Charm Store contains a MongoDB version that is too old (2.4) and cannot be used with the latest versions of Rocket.Chat.
+
+Instead, clone, build and deploy this work in progress MongoDB juju charm instead (for 2.6.10 version of Mongo)
+
+https://github.com/marcoceppi/layer-mongodb
+
+To deploy the Rocket.Chat charm you need to first have deployed the mongodb charm above.
+
+Then:
+
 ```
-juju deploy mongodb
 juju deploy rocketchat
 ```
 
