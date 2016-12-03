@@ -12,12 +12,14 @@ juju-log "Updating configuration file"
 app_port=`config-get port`
 app_url=`config-get url`
 mongo_url=${MONGO_URL}
+oplog_url=${MONGO_OPLOG_URL}
 
 # Creating Config file
 cat > /opt/rocket.chat/rocketchat.config <<EOS
 export PORT=${app_port}
 export ROOT_URL=${app_url}
 export MONGO_URL=${mongo_url}
+export MONGO_OPLOG_URL=${oplog_url}
 EOS
 
 service rocketchat status

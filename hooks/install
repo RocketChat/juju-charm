@@ -8,20 +8,17 @@ app_url=`config-get url`
 juju-log "Downloading dependencies from apt"
 
 # Grab Node.js and NPM as well as build-essential for a few node modules
-apt-get install -y npm nodejs build-essential
+apt-get install -y  build-essential
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+apt-get install -y nodejs
 
 juju-log "Setting Node.js Version to 4.5"
 
-# Install n so we can manage the version of Node.js
-npm install -g n
-
-# Install Node.js 4.5 for Rocket.Chat
-n 4.5
 
 juju-log "Downloading Rocket.Chat"
 
 # Download latest stable version of Rocket.Chat
-curl -L https://rocket.chat/releases/latest/download -o rocket.chat.tgz
+curl -L  https://rocket.chat/releases/latest/download  -o rocket.chat.tgz
 
 juju-log "Installing Rocket.Chat"
 
@@ -61,7 +58,7 @@ respawn
 script
   cd /opt/rocket.chat
   . /opt/rocket.chat/rocketchat.config
-  /usr/local/bin/node main.js
+  /usr/bin/node main.js
 end script
 EOS
 

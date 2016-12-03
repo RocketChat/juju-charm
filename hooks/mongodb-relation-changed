@@ -19,12 +19,15 @@ relation_port=`relation-get port`
 mongo_port=${relation_port:-27017}
 
 mongo_url="mongodb://${mongo_host}:${mongo_port}/${mongo_db}"
+oplog_url="mongodb://${mongo_host}:${mongo_port}/local?replicaSet=myset"
+
 
 # Creating Config file
 cat > /opt/rocket.chat/rocketchat.config <<EOS
 export PORT=${app_port}
 export ROOT_URL=${app_url}
 export MONGO_URL=${mongo_url}
+export MONGO_OPLOG_URL=${oplog_url}
 EOS
 
 service rocketchat status
