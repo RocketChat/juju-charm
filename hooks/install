@@ -18,7 +18,7 @@ juju-log "Setting Node.js Version to 4.5"
 juju-log "Downloading Rocket.Chat"
 
 # Download latest stable version of Rocket.Chat
-curl -L  https://rocket.chat/releases/latest/download  -o rocket.chat.tgz
+curl -L  https://download.rocket.chat/stable  -o rocket.chat.tgz
 
 juju-log "Installing Rocket.Chat"
 
